@@ -1,0 +1,140 @@
+﻿@model ClientSystem.Models.StudentProfile
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <section class="content" style="text-align:center;margin-left:500px">
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Student Registration</h3>
+                    </div>
+                    <form role="form">
+                        <div class="box-body">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.StudentProfileId)
+                            <div class="form-group">
+                                @Html.Label("Student Name", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.StudentName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Gender", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div>
+                                    @Html.RadioButtonFor(model => model.Gender, true, new { htmlAttributes = new { @class = "form-control" } }) Male
+                                    @Html.RadioButtonFor(model => model.Gender, false, new { htmlAttributes = new { @class = "form-control" } }) Female
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Student Phone", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.StudentPhone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StudentPhone, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Student Email", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.StudentEmail, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StudentEmail, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group" hidden>
+                                @Html.Label("Password", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Father Name", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.FatherName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Father Phone", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.FatherPhone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FatherPhone, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Mother Name", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.MotherName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MotherName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Mother Phone", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.MotherPhone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MotherPhone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Address", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group" hidden>
+                                @Html.LabelFor(model => model.DepartmentId, "Department Name", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.DropDownList("DepartmentId", null, "--select--", htmlAttributes: new { @class = "form-control", @id = "department" })
+                                    @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group" hidden>
+                                @Html.Label("Admission Date", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div>
+                                    @Html.EditorFor(model => model.AdmissionDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.AdmissionDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+}

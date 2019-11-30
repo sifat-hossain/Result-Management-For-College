@@ -1,0 +1,100 @@
+﻿@model ClientSystem.Models.StudentProfile
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+
+<section class="content" style="text-align:center;margin-left:400px">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="box box-solid box-primary ">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Student Profile</h3>
+                </div>
+                <div class="box-body">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayName("Name: ")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.StudentName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("Gender: ")
+                        </dt>
+                        @if (Model.Gender == true)
+                        {
+                            <dd>
+                                @Html.DisplayName("Male")
+                            </dd>
+                        }
+                        else
+                        {
+                            <dd>
+                                @Html.DisplayName("Female")
+                            </dd>
+                        }
+                        <dt>
+                            @Html.DisplayName("Email: ")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.StudentEmail)
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("Father's Name: ")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.FatherName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("Father's Phone: ")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.FatherPhone)
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("Mother's Name: ")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.MotherName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("Mother's Phone: ")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.MotherPhone)
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("Address")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Address)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Department: ")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Department.DepartmentName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayName("Admission Date: ")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.AdmissionDate)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

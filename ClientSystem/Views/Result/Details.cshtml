@@ -1,0 +1,63 @@
+﻿@model ClientSystem.Models.Result
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+
+<section class="content" style="text-align:center;margin-left:400px">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="box box-solid box-primary ">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Result of @Model.StudentProfile.StudentName</h3>
+                </div>
+                <div class="box-body">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayName("Student Name")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.StudentProfile.StudentName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Department")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Department.DepartmentName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Subject")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Subject.SubjectName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Exam Type")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.ExamType)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Marks")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Marks)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

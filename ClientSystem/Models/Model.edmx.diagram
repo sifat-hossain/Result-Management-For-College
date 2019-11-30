@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cf9f5d6503e84bda983718859002b268" Name="Diagram1">
+        <EntityTypeShape EntityType="DBCMSModel.Department" Width="1.5" PointX="0.875" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCMSModel.Designation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCMSModel.Result" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCMSModel.StudentProfile" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCMSModel.Subject" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCMSModel.TeacherProfile" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="DBCMSModel.FK__Result__Departme__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCMSModel.FK__StudentPr__Depar__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCMSModel.FK__Subjects__Depart__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCMSModel.FK__TeacherPr__Depar__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCMSModel.FK__Result__StudentP__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCMSModel.FK__Result__SubjectI__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCMSModel.FK__TeacherPr__Subje__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCMSModel.FK_TeacherProfile_Designation" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2.25" PointY="1.5478417968750002" />
+          <ConnectorPoint PointX="8.2864558333333331" PointY="1.5478417968750002" />
+          <ConnectorPoint PointX="8.2864558333333331" PointY="6.03828779296875" />
+          <ConnectorPoint PointX="8.5937475" PointY="6.03828779296875" />
+          <ConnectorPoint PointX="8.5937475" PointY="8.25" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

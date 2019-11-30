@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ClientSystem.Models.Result>
+
+@{
+    ViewBag.Title = "GetResult";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th colspan="3">
+            @Html.DisplayName("Student Name: ") @Html.Display("StudentName")
+            <br />
+            @Html.DisplayName("Exam Type:  ") @Html.Display("ExamType")
+            <br />
+            @Html.DisplayName("Department:   ") @Html.Display("Department")
+        </th>
+    </tr>
+    <tr>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.Subject.SubjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marks)
+        </th>
+        <th>
+            @Html.DisplayName("Grade")
+        </th>
+        
+    </tr>
+  
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marks)
+            </td>
+            @if (item.Marks >= 0 && item.Marks <= 39)
+            {
+               
+
+                <td>
+                    @Html.DisplayName("F")
+                </td>
+            }
+            @if (item.Marks >= 40 && item.Marks <= 49)
+            {
+              
+                <td>
+                    @Html.DisplayName("C")
+                </td>
+            }
+            @if (item.Marks >= 50 && item.Marks <= 59)
+            {
+               
+                <td>
+                    @Html.DisplayName("B")
+                </td>
+            }
+            @if (item.Marks >= 60 && item.Marks <= 69)
+            {
+              
+                <td>
+                    @Html.DisplayName("A-")
+                </td>
+            }
+            @if (item.Marks >= 70 && item.Marks <= 79)
+            {
+               
+                <td>
+                    @Html.DisplayName("A")
+                </td>
+            }
+            @if (item.Marks >= 80 && item.Marks <= 100)
+            {
+             
+                <td>
+                    @Html.DisplayName("A+")
+                </td>
+            }
+            
+        </tr>
+       
+    }
+    
+    <tfoot class="pull-right">
+        <tr>
+            <th colspan="3">
+                Total GPA:  @ViewBag.Average out of 5
+                <br />
+                Total Grade: @ViewBag.Grade
+            </th>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ClientSystem.Models.Result>
+
+@{
+    ViewBag.Title = "StudentResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="display" id="table">
+    <thead>
+
+        <tr>
+            <th>
+                @Html.DisplayName("Student Name")
+            </th>
+            <th>
+                @Html.DisplayName("Department")
+            </th>
+            <th>
+                @Html.DisplayName("Subject")
+            </th>
+            <th>
+                @Html.DisplayName("Exam Type")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marks)
+            </th>
+            <th>
+                @Html.DisplayName("Submit Date")
+            </th>
+            <th>
+                @Html.DisplayName("Action")
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentProfile.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExamType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubmitDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ResultId })
+
+            </td>
+        </tr>
+    }
+
+</table>

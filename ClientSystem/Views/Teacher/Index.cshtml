@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ClientSystem.Models.TeacherProfile>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="display" id="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Serial No.")
+            </th>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+
+            <th>
+                @Html.DisplayName("Email")
+            </th>
+
+            <th>
+                @Html.DisplayName("Phone")
+            </th>
+
+            <th>
+                @Html.DisplayName("Address")
+            </th>
+
+            <th>
+                @Html.DisplayName("Action")
+            </th>
+        </tr>
+    </thead>
+
+    @{ int i = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ i++;}
+                @i
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherEmail)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherAddress)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TeacherProfileId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TeacherProfileId })
+
+            </td>
+        </tr>
+    }
+
+</table>

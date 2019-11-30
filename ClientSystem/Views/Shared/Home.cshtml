@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Client System</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/ionicons.min.css" rel="stylesheet" />
+    <link href="~/Content/AdminLTE.css" rel="stylesheet" />
+    <link href="~/Content/_all-skins.css" rel="stylesheet" />
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="~/Content/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <p class="pull-left form-horizontal">
+        <img src="~/Image/logo.jpg" height="100" width="100"/>  
+        
+        <h1 class="form-group" style="color:darkgreen">
+            BHAWAL BADRE ALAM GOVT. COLLEGE, GAZIPUR<br />
+            ভাওয়াল বদরে আলম সরকারি কলেজ, গাজীপুর
+        </h1>
+    </p>
+   <br />
+
+   
+    <header class="main-header">
+        <div href="" class="logo">
+
+        </div>
+        <nav class="navbar navbar-static-top">
+
+            @*<a href="#" class="sidebar-toggle" data-toggle="push-menu">
+                    <span class="sr-only"></span>
+                </a>*@
+            @Html.ActionLink("Login", "Login", "Home", new { area = "" }, new { @class = "navbar-brand navbar-right" })
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    @*<li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-xs">##### <i class=" fa fa-angle-down"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+
+
+                                        <a href="#">Change Password</a>
+
+
+
+                                        <a href="#">Sign out</a>
+
+
+
+                                </li>
+                            </ul>
+                        </li>*@
+
+                    @*<li class="dropdown user user-menu">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-xs">##### <i class=" fa fa-angle-down"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+
+
+                                @*<li class="user-footer">
+                                        <div class="pull-left">
+                                            @if (Session["id"].ToString() != "admin")
+                                            {
+                                                <a href="/UserProfile/ChangePassword" class="btn btn-default btn-flat">Change Password</a>
+                                            }
+                                        </div>
+                                        <div class="pull-right">
+                                            @using (Html.BeginForm("Logout", "Login", FormMethod.Post, new { id = "logout" }))
+                                            {
+                                                <a href="javascript:document.getElementById('logout').submit()" class="btn btn-default btn-flat">Sign out</a>
+                                            }
+
+                                        </div>
+                                    </li>
+                            </ul>
+                        </li>*@
+
+
+
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    @*<aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu" data-widget="tree">
+                    @if (Session["id"] != null && Session["id"].ToString() != "admin")
+                    {
+                        <li><a href="~/UserProfile/Details"><span><i class="glyphicon glyphicon-book"></i> Profile Page</span></a></li>
+                        <li><a href="~/UserProfile/ChangePassword">Change Password</a></li>
+                    }
+                    @if (Session["id"] != null && Session["id"].ToString() == "admin")
+                    {
+                        <li><a href="~/UserProfile/Index"><i class="glyphicon glyphicon-book"></i> User List</a></li>
+
+                    }
+                </ul>
+            </section>
+        </aside>*@
+    <div class="body-content" style="margin-top:-20px!important;width:100%!important">
+        @RenderBody()
+        <hr />
+        <div style="text-align:center">
+            <footer class="box box-solid box-primary" style="width:100%;height:initial;">
+                <h3 style="font-size:larger;color:HighlightText"> Address</h3>
+                
+                <hr style="width:400px" />
+               
+                    Bhawal Badre Alam Govt. College
+                    <br />
+                    Gazipur, Chowrasta
+                    <br />
+                    Tangail Road
+                    <br />
+                    Gazipur
+               
+            </footer>
+        </div>
+        </div>
+    @*<div class="control-sidebar-bg"></div>*@
+
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" class="init">
+        $(document).ready(function () {
+            $('#table').DataTable();
+        });
+    </script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/adminlte.min.js"></script>
+    <script src="~/Scripts/dashboard2.js"></script>
+    <script src="~/Scripts/demo.js"></script>
+</body>
+</html>

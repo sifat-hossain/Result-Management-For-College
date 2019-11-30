@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ClientSystem.Models.Designation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="table" class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Serial No.")
+            </th>
+            <th>
+                @Html.DisplayName("Designation Name")
+            </th>
+            <th>
+                @Html.DisplayName("Action")
+            </th>
+        </tr>
+    </thead>
+    @{ int i = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ i++; }
+                @i
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesignationName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DesignationId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DesignationId }) |
+            </td>
+        </tr>
+    }
+
+</table>
