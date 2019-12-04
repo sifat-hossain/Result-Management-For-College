@@ -41,13 +41,14 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+                @Html.DisplayFor(modelItem => item.StudentProfile.StudentName)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Department.DepartmentName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StudentProfile.StudentName)
+                @Html.DisplayFor(modelItem => item.Subject.SubjectName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ExamType)

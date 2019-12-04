@@ -25,6 +25,7 @@
                         <div class="box-body">
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.HiddenFor(model => model.StudentProfileId)
+
                             <div class="form-group">
                                 @Html.Label("Student Name", htmlAttributes: new { @class = "control-label col-md-5" })
                                 <div>

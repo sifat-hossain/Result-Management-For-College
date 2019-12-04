@@ -84,7 +84,7 @@ namespace ClientSystem.Controllers
             {
                 result.SubmitDate = DateTime.Now;
 
-                bool value = db.Results.ToList().Exists(x => x.StudentProfileId == result.StudentProfileId && x.ExamType == result.ExamType && x.SubmitDate.Value.Year == result.SubmitDate.Value.Year);
+                bool value = db.Results.ToList().Exists(x => x.StudentProfileId == result.StudentProfileId && x.ExamType == result.ExamType && x.SubmitDate.Value.Year == result.SubmitDate.Value.Year && x.SubjectId==result.SubjectId);
                 if (value != true)
                 {
                     

@@ -114,13 +114,15 @@ namespace ClientSystem.Controllers
 
         public ActionResult GetResult(string exam)
         {
+           int id = Convert.ToInt32(Session["sid"]);
+
             double i = 0, point = 0,ave=0, total = 0;
 
             ViewBag.ExamType = exam;
-            ViewBag.Department = db.Results.Where(x => x.ExamType == exam && x.StudentProfileId == 1).FirstOrDefault().Department.DepartmentName;
-            ViewBag.StudentName = db.Results.Where(x => x.ExamType == exam && x.StudentProfileId == 1).FirstOrDefault().StudentProfile.StudentName;
+            ViewBag.Department = db.Results.Where(x => x.ExamType == exam && x.StudentProfileId == id).FirstOrDefault().Department.DepartmentName;
+            ViewBag.StudentName = db.Results.Where(x => x.ExamType == exam && x.StudentProfileId == id).FirstOrDefault().StudentProfile.StudentName;
 
-            var Result = db.Results.Where(x => x.ExamType == exam && x.StudentProfileId == 1).ToList();
+            var Result = db.Results.Where(x => x.ExamType == exam && x.StudentProfileId == id).ToList();
         
             foreach (var item in Result)
             {
